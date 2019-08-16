@@ -1,0 +1,36 @@
+<ion-header>
+
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-searchbar autofocus="true" [(ngModel)]="search" debounce="500" color="light" animated placeholder="Nhập từ khóa cần tìm"
+      (ionChange)="presentSearch($event)">
+
+    </ion-searchbar>
+    <ion-button slot="end" (click)="send(search)">go</ion-button>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+
+  <ion-list *ngFor="let item of playListOnline.data">
+    <ion-button fill="clear" (click)="goPlay(item)" class="songs">
+      <ion-item class="Textcontent">
+        <ion-img [src]="item.album.cover_xl" slot='start'></ion-img>
+        
+        <ion-label>
+          <h4>{{item.title}}</h4>
+          <small>{{item.artist.name}}</small>
+        </ion-label>
+      </ion-item>
+    </ion-button>
+  </ion-list>
+
+  <ion-item lines="none">
+    <ion-button slot="end" [hidden]="!isInputText">Xem thêm</ion-button>
+  </ion-item>
+
+</ion-content>

@@ -1,0 +1,247 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-menu-button menu="first">
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-segment [(ngModel)]="segment" (ionChange)="segmentChanged($event)">
+      <ion-segment-button class='segment-mytunes' value="mytunes">
+        <ion-label>My Tunes</ion-label>
+      </ion-segment-button>
+      <ion-segment-button class='segment-online' value="online">
+        <ion-label>Online</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+    <ion-icon class='search' size="large" slot="end" name="search" routerLink="/search"></ion-icon>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <div [ngSwitch]="segment">
+    <div *ngSwitchCase="'online'">
+      <ion-segment [(ngModel)]="segmentbottom" (ionChange)="segmentBottomChanged($event)" color="tertiary">
+        <ion-segment-button class="segment" value="home">
+          <ion-icon name="compass"></ion-icon>
+          <ion-label>Trang chủ</ion-label>
+        </ion-segment-button>
+        <ion-segment-button class="segment" value="singer">
+          <ion-icon name="microphone"></ion-icon>
+          <ion-label>Ca sĩ</ion-label>
+        </ion-segment-button>
+        <ion-segment-button class="segment" value="songs">
+          <ion-icon name="musical-notes"></ion-icon>
+          <ion-label>Bài hát</ion-label>
+        </ion-segment-button>
+        <ion-segment-button class="segment" value="rank">
+          <ion-icon name="funnel"></ion-icon>
+          <ion-label>BXH</ion-label>
+        </ion-segment-button>
+        <ion-segment-button class='segment' value="topic">
+          <ion-icon name="easel"></ion-icon>
+          <ion-label>Chủ đề</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+      <div [ngSwitch]="segmentbottom">
+        <div *ngSwitchCase="'home'">
+          <ion-slides [options]="slideOptions" pager="true" #slider (ionSlidesDidLoad)="slidesDidLoad(slider)">
+            <ion-slide *ngFor="let i of ImageArray">
+              <img [src]="i.image">
+            </ion-slide>
+          </ion-slides>
+          <div style="text-align: center">
+            <ion-text class='home-text'> NGHE GÌ HÔM NAY</ion-text>  
+          </div>
+          <ion-list class='home-list'>
+            <ion-button fill="clear" class="btn-home" >
+              <ion-item lines='none'>
+                <ion-img src="../../assets/image/tung-yeu.jpg" slot='start' class='home-image'></ion-img>
+                
+                <ion-label>
+                  <h4>Từng Yêu</h4>
+                  <small>Phan Duy Anh</small>
+                </ion-label>
+              </ion-item>
+            </ion-button>
+            <ion-button fill="clear" class="btn-home">
+              <ion-item lines='none'>
+                <ion-img src="../../assets/image/haytraochoanh.jpg" slot='start' class='home-image'></ion-img>
+                
+                <ion-label>
+                  <h4>Hãy Trao Cho Anh</h4>
+                  <small>Sơn Tùng M-TP, Snoop Dogg</small>
+                </ion-label>
+              </ion-item>
+            </ion-button>
+            <ion-button fill="clear" class="btn-home">
+              <ion-item lines='none'>
+                <ion-img src="../../assets/image/caooc20.jpg" slot='start' class='home-image'></ion-img>
+                
+                <ion-label>
+                  <h4>Cao Ốc 20</h4>
+                  <small>B Ray, Đạt G, Masew, K-ICM</small>
+                </ion-label>
+              </ion-item>
+            </ion-button>
+        
+          </ion-list>
+        </div>
+        <div *ngSwitchCase="'singer'">
+          <ion-list *ngFor="let item of singer">
+            <ion-item class="singerDetail">
+              <ion-img slot="start" [src]="item.img"></ion-img>
+              <ion-button fill="clear">
+                {{item.name}}
+              </ion-button>
+              
+            </ion-item>
+          </ion-list>
+        </div>
+        <div *ngSwitchCase="'songs'">
+          <ion-text>
+            This is segment of songs
+          </ion-text>
+        </div>
+        <div *ngSwitchCase="'rank'">
+          <ion-text padding style="font-weight: bold">
+            Bảng Xếp Hạng Bài Hát
+          </ion-text>
+          <ion-list lines='none'>
+            <ion-button style="height: 400%" fill="clear" >
+              <ion-item >
+                <ion-img src="../../assets/image/bxh_vpop.jpg" slot='start'></ion-img>
+                <ion-label>
+                  <h2>1 - Từng Yêu</h2>
+                  <h2>2 - Hãy Trao Cho Anh</h2>
+                  <h2>3 - Cao Ốc 20</h2>
+                </ion-label>
+              </ion-item>
+            </ion-button>
+        
+          </ion-list>
+          <ion-list lines='none'>
+            <ion-button style="height: 400%" fill="clear" >
+              <ion-item >
+                <ion-img src="../../assets/image/us-usk.jpg" slot='start'></ion-img>
+                <ion-label>
+                  <h2>1 - Old Town Road</h2>
+                  <h2>2 - On My Way</h2>
+                  <h2>3 - Call You Mine</h2>
+                </ion-label>
+              </ion-item>
+            </ion-button>
+        
+          </ion-list>
+          <ion-list lines='none'>
+            <ion-button style="height: 400%" fill="clear" >
+              <ion-item >
+                <ion-img src="../../assets/image/kpop.PNG" slot='start'></ion-img>
+                <ion-label>
+                  <h2>1 - Cabinet</h2>
+                  <h2>2 - Kill This Love</h2>
+                  <h2>3 - Don't Know What To Do</h2>
+                </ion-label>
+              </ion-item>
+            </ion-button>
+        
+          </ion-list>
+          <ion-text padding style="font-weight: bold">
+            Bảng Xếp Hạng MV
+          </ion-text>
+          <ion-list lines='none'>
+            <ion-button style="height: 400%" fill="clear" >
+              <ion-item >
+                <ion-img src="../../assets/image/bxh_vpop.jpg" slot='start'></ion-img>
+                <ion-label>
+                  <h2>1 - Hãy Trao Cho Anh</h2>
+                  <h2>2 - Đau Đầu</h2>
+                  <h2>3 - Cao Ốc 20</h2>
+                </ion-label>
+              </ion-item>
+            </ion-button>
+        
+          </ion-list>
+          <ion-list lines='none'>
+            <ion-button style="height: 400%" fill="clear" >
+              <ion-item >
+                <ion-img src="../../assets/image/us-usk.jpg" slot='start'></ion-img>
+                <ion-label>
+                  <h2>1 - Bad Guy</h2>
+                  <h2>2 - Bad Behaviour</h2>
+                  <h2>3 - On My Way</h2>
+                </ion-label>
+              </ion-item>
+            </ion-button>
+        
+          </ion-list>
+          <ion-list lines='none'>
+            <ion-button style="height: 400%" fill="clear" >
+              <ion-item >
+                <ion-img src="../../assets/image/kpop.PNG" slot='start'></ion-img>
+                <ion-label>
+                  <h2>1 - Cabinet</h2>
+                  <h2>2 - Kill This Love</h2>
+                  <h2>3 - Zimzalabim</h2>
+                </ion-label>
+              </ion-item>
+            </ion-button>
+        
+          </ion-list>
+        </div>
+        <div *ngSwitchCase="'topic'">
+          <ion-list>
+            <ion-slides [options]="slideOptions" pager="true" #slider (ionSlidesDidLoad)="slidesDidLoad(slider)">
+              <ion-slide *ngFor="let i of ImageArrayTopicsSliding">
+                <ion-img [src]="i.image" class='image-topic-sliding'></ion-img>
+              </ion-slide>
+            </ion-slides>
+            <div style="text-align: center">
+              <ion-text class='topics-text'>CHỦ ĐỀ NỔI BẬT</ion-text>
+            </div>
+            <div style="text-align: center">
+              <ion-button *ngFor='let item of ImageArrayTopics' class='btn-topics'>
+                <ion-img [src]='item.image' class='image-topic'></ion-img>
+              </ion-button>
+            </div>
+          </ion-list>
+        </div>
+
+      </div>
+    </div>
+    <div *ngSwitchCase="'mytunes'">
+      <ion-list>
+        <ion-item>
+          <ion-label>Online</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon slot="start" name="paper"></ion-icon>
+          <ion-label>Playlist</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon slot="start" name="film"></ion-icon>
+          <ion-label>Video</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Offline</ion-label>
+        </ion-item>
+        <ion-item routerLink="/load-folder">
+          <ion-icon slot="start" name="clipboard"></ion-icon>
+          <ion-label>Thư viện nhạc</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon slot="start" name="film"></ion-icon>
+          <ion-label>Video</ion-label>
+        </ion-item>
+      </ion-list>
+
+    </div>
+  </div>
+
+  <!-- <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button class="alarm-class">
+      <ion-icon size="large" name="alarm" color="tertiary"></ion-icon>
+    </ion-fab-button>
+  </ion-fab> -->
+  
+
+</ion-content>

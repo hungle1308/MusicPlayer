@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons>
+      <ion-back-button defaultHref="#"></ion-back-button>
+      <ion-title>Nhạc trên thiết bị</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list *ngFor="let file of fileList">
+    <ion-item (click)="goPlay(file)">
+      <ion-thumbnail>
+        <img src="./assets/image/avatar.jpg">
+      </ion-thumbnail>
+      <ion-label>{{file.filename}}</ion-label>
+      <ion-text>Artist</ion-text>
+    </ion-item>
+  </ion-list>
+</ion-content>

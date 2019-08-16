@@ -1,0 +1,41 @@
+ion-content{
+                    --background: url('https://c.wallhere.com/photos/ea/93/1920x1080_px_EDM_headphones_Monstercat_music_music_festival-529221.jpg!d') no-repeat ;
+                 }
+                 ion-content form ion-list{
+                     margin: 240px 10px 10px 10px;
+                     height: 200px;
+                     padding: 10px;
+                     border: 1px solid white;
+                     border-radius: 25px;
+                     
+                 }
+                 
+                 ion-list ion-label{
+                     margin-left: 37%;
+                 }
+                 ion-input{
+                     // padding-top: 30px;
+                     margin-top: 10px;
+                 }
+                 ion-content form ion-list ion-button{
+                     margin-top: 15px;
+                     margin-left: 42%;
+                 }
+                 ion-content form ion-button{
+                     color: white;
+                     margin-left: 15%;
+                 }
+                 .verify{
+                     margin-left: -20%;
+                 }
+                 form ion-list ion-item ion-label{
+                     font-size: 18px;
+                     margin-left: 0px;
+                     height: 30px;
+                     margin-top: -10px;
+                 }
+                 .error-messages{
+                     font-size: 14px;
+                     color: red;
+                     text-align: center
+                 }

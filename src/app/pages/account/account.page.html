@@ -1,0 +1,37 @@
+<ion-content class="background-image">
+  <form [formGroup]="myLogin" >
+    <ion-list expanded= "block">
+      <ion-label>MUSIC APP</ion-label>
+      <ion-item [hidden] = "isSendOTP">
+          <ion-label  position="floating"> Số điện thoại</ion-label>
+          <ion-input formControlName="phone" type = "text" [(ngModel)]="phone"  name="phone" clear-input="true"  ></ion-input>
+      </ion-item>
+      <div class="error-messages">
+          <div *ngFor="let error of error_messages.phone">
+            <div class="error-messages" *ngIf="myLogin.controls.phone.invalid && (myLogin.controls.phone.dirty || myLogin.controls.phone.touched)">
+              {{error.messages}}
+            </div>
+          </div>
+      </div>
+      <ion-button  [disabled]= "!myLogin.controls.phone.valid" [hidden] = "isSendOTP" shape= "round" size="small" (click) ="send(phone)">Login</ion-button>
+      <ion-item [hidden] = "!isSendOTP" >
+        <div>
+            <ion-label  position="floating"> mã OTP</ion-label>
+        <ion-input formControlName="code" [(ngModel)]="code"  type="text" name="code" clear-input="true" 	maxlength="6"></ion-input>
+      </div>
+      </ion-item>
+      <div class="error-messages" >
+          <div *ngFor="let error of error_messages.code">
+            <div class="error-messages" *ngIf="myLogin.controls.code.invalid && (myLogin.controls.code.dirty || myLogin.controls.code.touched)">
+              *{{error.messages}}
+            </div>
+          </div>
+      </div>
+      
+      <ion-button  [disabled]= "!myLogin.controls.code.valid" [hidden] = "!isSendOTP" size="small" class="verify" shape="round" (click) ="verify()">verify </ion-button>
+    </ion-list>
+    <!-- <ion-button class="button-native" (click)="register()" fill= "clear" >don't have an account </ion-button>
+    <ion-button   size="small" class="verify" shape="round" (click) ="loginEmail()">Đăng nhập với tài khoản Google </ion-button> -->
+  </form>
+  
+  </ion-content>

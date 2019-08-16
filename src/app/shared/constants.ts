@@ -1,0 +1,1 @@
+export const MENU = "../assets/data/menu.json"

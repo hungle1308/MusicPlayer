@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons>
+      <ion-back-button defaultHref="#"></ion-back-button>
+      <ion-title>Nhạc trên thiết bị</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list *ngFor="let file of fileList">
+    <ion-item (click)="goPlay(file)">
+      <ion-thumbnail>
+        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      </ion-thumbnail>
+      <ion-label>Name</ion-label>
+      <ion-text>Artist</ion-text>
+    </ion-item>
+  </ion-list>
+  
+
+</ion-content>

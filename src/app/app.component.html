@@ -1,0 +1,31 @@
+<ion-app>
+  <ion-split-pane when="md" contentId="menu">
+    <ion-menu side="start" menuId="first" contentId="menu">
+      <ion-header>
+        <ion-toolbar color="tertiary">
+          <ion-buttons slot="start">
+            <ion-avatar>
+              <img src="/assets/image/default-image.png">
+            </ion-avatar>
+          </ion-buttons>
+          <ion-title>
+            <ion-text class="username">Hung Lee</ion-text><br>
+            <ion-text class="small-text">Chỉnh sửa tài khoản</ion-text>
+            <!-- <small routerLink="/">Chỉnh sửa tài khoản</small> -->
+          </ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list color="primary">
+          <ion-menu-toggle autoHide="false" *ngFor="let c of menuContent">
+            <ion-item [routerLink]="c.redirectTo" detail >
+              <ion-icon slot="start" [name]="c.icon" color="tertiary"></ion-icon>
+              <ion-label color="tertiary">{{c.name}}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="menu"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

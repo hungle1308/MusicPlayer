@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "877631005570",
+    "firebase_url": "https://grandviewapp-fd2b5.firebaseio.com",
+    "project_id": "grandviewapp-fd2b5",
+    "storage_bucket": "grandviewapp-fd2b5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:877631005570:android:0cb0ab590b329016",
+        "android_client_info": {
+          "package_name": "com.samarth.sms"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "877631005570-elqkdamnda8mj3511j7orhkv8c1pb804.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.samarth.sms",
+            "certificate_hash": "95792bd39a82d754f1764ed61493d60c66cd4e1e"
+          }
+        },
+        {
+          "client_id": "877631005570-8s46rebrph70p08p6ueksta8d3e996mt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1x7SGvSjUiYBgRTdgufnaHZDD6zBqTtw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "877631005570-8s46rebrph70p08p6ueksta8d3e996mt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
