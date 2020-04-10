@@ -37,7 +37,7 @@
     "@ionic/storage": "^2.2.0",
     "@ngrx/store": "^8.1.0",
     "@types/auth0-js": "^9.10.2",
-    "auth0-js": "^9.11.2",
+    "auth0-js": "^9.13.2",
     "cordova-android": "^8.0.0",
     "cordova-plugin-androidx": "^1.0.2",
     "cordova-plugin-androidx-adapter": "^1.1.0",
