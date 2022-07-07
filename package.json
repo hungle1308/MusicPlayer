@@ -52,7 +52,7 @@
     "core-js": "^2.5.4",
     "firebase": "^6.3.5",
     "jsmediatags": "^3.8.1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "native-run": "^0.2.8",
     "rxjs": "~6.5.1",
     "rxjs-compat": "^6.5.2",
